@@ -1,3 +1,4 @@
+  * utmpset.c: don't pass int32_t to time() (thx Lorenzo Beretta).
   * chpst.c, pathexec.h, pathexec_env.c, pathexec_run.c, runsvdir.c,
     sgetopt.c, sgetopt.h, subgetopt.c, subgetopt.h, sv.c, svlogd.c,
     utmpset.c: fix compilation warning(s): -Wincompatible-pointer-types-
