@@ -63,7 +63,7 @@ void runsv(int no, char *name) {
   }
   if (pid == 0) {
     /* child */
-    const char *prog[3];
+    char *prog[3];
 
     prog[0] ="runsv";
     prog[1] =name;
@@ -71,7 +71,7 @@ void runsv(int no, char *name) {
     sig_uncatch(sig_hangup);
     sig_uncatch(sig_term);
     if (pgrp) setsid();
-    pathexec_run(*prog, prog, (const char* const*)environ);
+    pathexec_run(*prog, prog, (char * const *)environ);
     fatal("unable to start runsv ", name);
   }
   sv[no].pid =pid;

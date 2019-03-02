@@ -52,7 +52,7 @@ unsigned long linelen;
 const char *replace ="";
 char repl =0;
 
-const char **fndir;
+char **fndir;
 int fdwdir;
 struct stat st;
 stralloc sa;
@@ -661,7 +661,7 @@ void logmatch(struct logdir *ld) {
     i +=byte_chr(&ld->inst.s[i], ld->inst.len -i, 0);
   }
 }
-int main(int argc, const char **argv) {
+int main(int argc, char **argv) {
   int i;
   int opt;
 
