@@ -130,7 +130,7 @@ int main (int argc, const char * const *argv, char * const *envp) {
       sig_unblock(sig_child);
       sig_uncatch(sig_child);
       sig_unblock(sig_cont);
-      sig_ignore(sig_cont);
+      sig_uncatch(sig_cont);
       sig_unblock(sig_hangup);
       sig_unblock(sig_int);
       sig_uncatch(sig_int);
