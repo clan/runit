@@ -99,8 +99,8 @@ reboot_system.h: choose compile reboot_system.h1 reboot_system.h2
 	  reboot_system.h
 
 uw_tmp.h: compile uw_tmp.h1 uw_tmp.h2
-	( ./compile tryuwtmpx.c 2>/dev/null && cat uw_tmp.h2 >uw_tmp.h ) || \
-	( ./compile tryuwtmp.c 2>/dev/null && cat uw_tmp.h1 >uw_tmp.h )
+	( ./compile tryuwtmpx.c && cat uw_tmp.h2 >uw_tmp.h ) || \
+	( ./compile tryuwtmp.c && cat uw_tmp.h1 >uw_tmp.h )
 	rm -f tryuwtmp.o tryuwtmpx.o
 
 socket.lib: compile load trysocketlib.c
