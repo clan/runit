@@ -22,9 +22,9 @@ int pathexec_env(const char *s,const char *t)
   return stralloc_cat(&plus,&tmp);
 }
 
-void pathexec_env_run(const char *file, const char *const *argv)
+void pathexec_env_run(const char *file, char *const *argv)
 {
-  const char **e;
+  char **e;
   unsigned int elen;
   unsigned int i;
   unsigned int j;
@@ -40,7 +40,7 @@ void pathexec_env_run(const char *file, const char *const *argv)
     if (!plus.s[i])
       ++elen;
 
-  e = (const char **) alloc((elen + 1) * sizeof(char *));
+  e = (char **) alloc((elen + 1) * sizeof(char *));
   if (!e) return;
 
   elen = 0;
@@ -68,7 +68,7 @@ void pathexec_env_run(const char *file, const char *const *argv)
   alloc_free(e);
 }
 
-void pathexec(const char *const *argv)
+void pathexec(char *const *argv)
 {
   return pathexec_env_run(*argv, argv);
 }
