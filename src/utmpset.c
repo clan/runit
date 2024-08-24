@@ -67,7 +67,7 @@ int wtmp_logout(const char *line) {
   }
   memset(&ut, 0, sizeof(uw_tmp));
   if ((len =str_len(line)) > sizeof ut.ut_line) len =sizeof ut.ut_line -2;
-  byte_copy(ut.ut_line, len, line);
+  byte_copy(ut.ut_line, len, (char *)line);
   if (time(&t) == -1) {
     close(fd);
     return(-1);
