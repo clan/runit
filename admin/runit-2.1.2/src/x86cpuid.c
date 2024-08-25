@@ -1,5 +1,7 @@
 /* Public domain. */
 
+#include <stdio.h>
+#include <stdlib.h>
 #include <signal.h>
 
 void nope()
