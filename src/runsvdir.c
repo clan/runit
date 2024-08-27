@@ -176,7 +176,7 @@ int main(int argc, char **argv) {
   if (! argv || ! *argv) usage();
   if (**argv == '-') {
     switch (*(*argv +1)) {
-    case 'P': pgrp =1;
+    case 'P': pgrp =1; /* fallthrough */
     case '-': ++argv;
     }
     if (! argv || ! *argv) usage();
