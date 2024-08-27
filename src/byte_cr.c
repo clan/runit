@@ -10,9 +10,13 @@ register char *from;
   to += n;
   from += n;
   for (;;) {
-    if (!n) return; *--to = *--from; --n;
-    if (!n) return; *--to = *--from; --n;
-    if (!n) return; *--to = *--from; --n;
-    if (!n) return; *--to = *--from; --n;
+    if (!n) return;
+    *--to = *--from; --n;
+    if (!n) return;
+    *--to = *--from; --n;
+    if (!n) return;
+    *--to = *--from; --n;
+    if (!n) return;
+    *--to = *--from; --n;
   }
 }
