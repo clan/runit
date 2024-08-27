@@ -310,12 +310,14 @@ int main(int argc, char **argv) {
       switch (*optarg) {
         case '-':
           ++optarg;
-          if (optarg[scan_ulong(optarg, &ul)]) usage(); nicelvl =ul;
+          if (optarg[scan_ulong(optarg, &ul)]) usage();
+          nicelvl =ul;
           nicelvl *=-1;
           break;
         case '+': ++optarg;
         default:
-          if (optarg[scan_ulong(optarg, &ul)]) usage(); nicelvl =ul;
+          if (optarg[scan_ulong(optarg, &ul)]) usage();
+          nicelvl =ul;
           break;
       }
       break;
