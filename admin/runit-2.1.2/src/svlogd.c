@@ -471,7 +471,7 @@ unsigned int logdir_open(struct logdir *ld, const char *fn) {
         break;
       case 's':
         switch (sa.s[scan_ulong(&sa.s[i +1], &ld->sizemax) +i +1]) {
-        case 'm': ld->sizemax *=1024;
+        case 'm': ld->sizemax *=1024; /* fallthrough */
         case 'k': ld->sizemax *=1024;
         }
         break;
@@ -484,7 +484,7 @@ unsigned int logdir_open(struct logdir *ld, const char *fn) {
       case 't':
         switch (sa.s[scan_ulong(&sa.s[i +1], &ld->tmax) +i +1]) {
         /* case 'd': ld->tmax *=24; */
-        case 'h': ld->tmax *=60;
+        case 'h': ld->tmax *=60; /* fallthrough */
         case 'm': ld->tmax *=60;
         }
         if (ld->tmax) {
@@ -503,6 +503,7 @@ unsigned int logdir_open(struct logdir *ld, const char *fn) {
         break;
       case 'U':
         ld->udponly =1;
+        /* fallthrough */
       case 'u':
         if (! (c =ip4_scan(sa.s +i +1, (char *)&ld->udpaddr.sin_addr))) {
           warnx("unable to scan ip address", sa.s +i +1);
@@ -702,7 +703,7 @@ int main(int argc, char **argv) {
     case 'v':
       ++verbose;
       break;
-    case 'V': strerr_warn1(VERSION, 0);
+    case 'V': strerr_warn1(VERSION, 0); /* fallthrough */
     case '?': usage();
     }
   }
