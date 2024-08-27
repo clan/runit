@@ -101,6 +101,7 @@ int main (int argc, char * const *argv, const char * const *envp) {
       break;
     case 'V':
       strerr_warn1("$Id$", 0);
+      /* fallthrough */
     case '?':
       usage();
     }

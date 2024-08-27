@@ -69,6 +69,7 @@ int main (int argc, const char * const *argv, char * const *envp) {
   case '-':
     if ((*argv)[1] == 'V')
       strerr_warn1("$Id$\n", 0);
+    /* fallthrough */
   default:
     usage();
   }

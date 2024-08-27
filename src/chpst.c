@@ -315,7 +315,7 @@ int main(int argc, char **argv) {
           nicelvl =ul;
           nicelvl *=-1;
           break;
-        case '+': ++optarg;
+        case '+': ++optarg; /* fallthrough */
         default:
           if (optarg[scan_ulong(optarg, &ul)]) usage();
           nicelvl =ul;
@@ -329,7 +329,7 @@ int main(int argc, char **argv) {
     case '0': nostdin =1; break;
     case '1': nostdout =1; break;
     case '2': nostderr =1; break;
-    case 'V': strerr_warn1("$Id$", 0);
+    case 'V': strerr_warn1("$Id$", 0); /* fallthrough */
     case '?': usage();
     }
   argv +=optind;
@@ -466,7 +466,7 @@ void softlimit(int argc, char *const *argv) {
   
   while ((opt =getopt(argc,argv,"a:c:d:f:l:m:o:p:r:s:t:")) != opteof)
     switch(opt) {
-    case '?': softlimit_usage();
+    case '?': softlimit_usage(); /* fallthrough */
     case 'a': getlarg(&limita); break;
     case 'c': getlarg(&limitc); break;
     case 'd': getlarg(&limitd); break;

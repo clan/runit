@@ -164,7 +164,7 @@ int status(char *unused) {
   int rc;
 
   rc =svstatus_get();
-  switch(rc) { case -1: if (lsb) done(4); case 0: return(0); }
+  switch(rc) { case -1: if (lsb) done(4); /* fallthrough */ case 0: return(0); }
   rc =svstatus_print(*service);
   islog =1;
   if (chdir("log") == -1) {
@@ -180,7 +180,7 @@ int status(char *unused) {
   }
   islog =0;
   flush("");
-  if (lsb) switch(rc) { case 1: done(0); case 2: done(3); case 0: done(4); }
+  if (lsb) switch(rc) { case 1: done(0); /* fallthrough */ case 2: done(3); /* fallthrough */ case 0: done(4); }
   return(rc);
 }
 
@@ -303,9 +303,9 @@ int main(int argc, char **argv) {
   if ((x =env_get("SVWAIT"))) scan_ulong(x, &wait);
   while ((i =getopt(argc, (char* const*)argv, "w:vV")) != opteof) {
     switch(i) {
-    case 'w': scan_ulong(optarg, &wait);
+    case 'w': scan_ulong(optarg, &wait); /* fallthrough */
     case 'v': verbose =1; break;
-    case 'V': strerr_warn1(VERSION, 0);
+    case 'V': strerr_warn1(VERSION, 0); /* fallthrough */
     case '?': usage();
     }
   }
@@ -332,8 +332,10 @@ int main(int argc, char **argv) {
     acts ="tc"; kll =1; cbk =&check; break;
   case 't':
     if (!str_diff(action, "try-restart")) { acts ="tc"; cbk =&check; break; }
+    /* fallthrough */
   case 'c':
     if (!str_diff(action, "check")) { act =0; acts ="C"; cbk =&check; break; }
+    /* fallthrough */
   case 'u': case 'd': case 'o': case 'p': case 'h':
   case 'a': case 'i': case 'k': case 'q': case '1': case '2':
     action[1] =0; acts =action; break;
@@ -347,6 +349,7 @@ int main(int argc, char **argv) {
     if (!str_diff(action, "restart")) { acts ="tcu"; cbk =&check; break; }
     if (!str_diff(action, "reload")) { acts ="h"; cbk =&check; break; }
     usage();
+    /* fallthrough */
   case 'f':
     if (!str_diff(action, "force-reload"))
       { acts ="tc"; kll =1; cbk =&check; break; }
@@ -356,6 +359,7 @@ int main(int argc, char **argv) {
       { acts ="x"; kll =1; cbk =&check; break; }
     if (!str_diff(action, "force-stop"))
       { acts ="d"; kll =1; cbk =&check; break; }
+    /* fallthrough */
   default:
     usage();
   }
