@@ -86,6 +86,7 @@ int wtmp_logout(const char *line) {
 }
 
 int main (int argc, char * const *argv, const char * const *envp) {
+  (void)envp;
   int opt;
   int wtmp =0;
 

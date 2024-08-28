@@ -47,6 +47,8 @@ void sync_if_needed() {
 }
 
 int main (int argc, const char * const *argv, char * const *envp) {
+  (void)argc;
+  (void)argv;
   const char * prog[2];
   int pid, pid2;
   int wstat;

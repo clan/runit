@@ -160,6 +160,7 @@ int setup_log() {
 }
 
 int main(int argc, char **argv) {
+  (void)argc;
   struct stat s;
   time_t mtime =0;
   int wstat;
