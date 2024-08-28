@@ -42,6 +42,7 @@ void runit_reboot () {
 }
 
 int main (int argc, const char * const *argv, char * const *envp) {
+  (void)argc;
   const char *prog[2];
 
   progname =*argv++;

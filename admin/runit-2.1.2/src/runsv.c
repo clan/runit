@@ -382,6 +382,7 @@ int ctrl(struct svdir *s, char c) {
 }
 
 int main(int argc, char **argv) {
+  (void)argc;
   struct stat s;
   int fd;
   int r;
