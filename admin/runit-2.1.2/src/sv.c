@@ -152,6 +152,7 @@ unsigned int svstatus_print(char *m) {
   return(pid ? 1 : 2);
 }
 int status(char *unused) {
+  (void)unused;
   int rc;
 
   rc =svstatus_get();
