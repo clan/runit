@@ -54,10 +54,8 @@ and
 .IR service /finish's
 standard output to the pipe, switches to the directory
 .IR service /log
-and starts ./run (and ./finish) exactly as described above for the
-.I service
-directory.
-The standard input of the log service is redirected to read from the pipe.
+and starts ./run script. The standard input of the log service
+is redirected to read from the pipe.
 .P
 .B runsv
 maintains status information in a binary format (compatible to the
@@ -168,7 +166,7 @@ process is running in the service directory.
 .SH CUSTOMIZE CONTROL
 For each control character
 .I c
-sent to the control pipe,
+except "d" and "x" sent to the control pipe,
 .B runsv
 first checks if
 .I service\fR/control/\fIc
@@ -195,6 +193,35 @@ first
 .I service\fR/control/t
 is checked, and then
 .I service\fR/control/x.
+Specifically:
+.P
+If the service is running or paused, control characters "d" and "x" are handled as follows:
+.TP
+.B 1.
+.B runsv
+checks whether
+.I service\fR/control/t
+exists and is executable and runs it if yes.
+.TP
+.B 2.
+If
+.I service\fR/control/t
+exits nonzero, or is not executable or doesn't exist,
+.B runsv
+sends the service a TERM signal.
+.TP
+.B 3.
+.B runsv
+sends the service a CONT signal, disregarding
+.I service\fR/control/c
+even if it exists and is executable.
+.TP
+.B 4.
+.B runsv
+checks whether
+.I service\fR/control/d (or control/x)
+exists and is executable and runs it if yes. Its exit status is ignored.
+.P
 The control of the optional log service cannot be customized.
 .SH SIGNALS
 If
