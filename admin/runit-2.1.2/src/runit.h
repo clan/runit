@@ -1,4 +1,5 @@
 #define RUNIT "/sbin/runit"
 #define STOPIT "/etc/runit/stopit"
 #define REBOOT "/etc/runit/reboot"
+#define NOSYNC "/etc/runit/nosync"
 #define CTRLALTDEL "/etc/runit/ctrlaltdel"
