@@ -1,5 +1,6 @@
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <time.h>
 #include <unistd.h>
 #include "str.h"
 #include "strerr.h"
@@ -269,6 +270,17 @@ int control(char *a) {
   return(1);
 }
 
+void sleep_microseconds(unsigned int microseconds) {
+#if _POSIX_C_SOURCE >= 199309L
+  struct timespec sleeptime;
+  sleeptime.tv_sec = microseconds / 1000000;
+  sleeptime.tv_nsec = (microseconds % 1000000) * 1000L;
+  nanosleep(&sleeptime, NULL);
+#else
+  usleep(microseconds);
+#endif
+}
+
 int main(int argc, char **argv) {
   unsigned int i, done;
   char *x;
@@ -393,7 +405,7 @@ int main(int argc, char **argv) {
           fatal("unable to change to original directory");
       }
       if (done) break;
-      usleep(420000);
+      sleep_microseconds(420000);
       taia_now(&tnow);
     }
   return(rc > 99 ? 99 : rc);
