@@ -375,6 +375,7 @@ void setuidgid_usage() {
   strerr_die4x(100, "usage: ", progname, USAGE_SETUIDGID, "\n");
 }
 void setuidgid(int argc, char *const *argv) {
+  (void)argc;
   const char *account;
 
   if (! (account =*++argv)) setuidgid_usage();
@@ -388,6 +389,7 @@ void envuidgid_usage() {
   strerr_die4x(100, "usage: ", progname, USAGE_ENVUIDGID, "\n");
 }
 void envuidgid(int argc, char *const *argv) {
+  (void)argc;
   const char *account;
 
   if (! (account =*++argv)) envuidgid_usage();
@@ -401,6 +403,7 @@ void envdir_usage() {
   strerr_die4x(100, "usage: ", progname, USAGE_ENVDIR, "\n");
 }
 void envdir(int argc, char *const *argv) {
+  (void)argc;
   const char *dir;
 
   if (! (dir =*++argv)) envdir_usage();
@@ -414,6 +417,7 @@ void pgrphack_usage() {
   strerr_die4x(100, "usage: ", progname, USAGE_PGRPHACK, "\n");
 }
 void pgrphack(int argc, char *const *argv) {
+  (void)argc;
   if (! *++argv) pgrphack_usage();
   setsid();
   pathexec(argv);
