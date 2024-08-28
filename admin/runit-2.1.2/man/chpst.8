@@ -3,7 +3,7 @@
 chpst \- runs a program with a changed process state
 .SH SYNOPSIS
 .B chpst
-[\-vP012]
+[\-vVP012]
 [\-u
 .IR user ]
 [\-U
@@ -30,6 +30,8 @@ chpst \- runs a program with a changed process state
 .IR bytes ]
 [-c
 .IR bytes ]
+[-t
+.IR seconds ]
 .I prog
 .SH DESCRIPTION
 .I prog
@@ -68,7 +70,7 @@ is prefixed with a colon, the
 .I user
 and all
 .I group
-arguments are interpreted as uid and gids respectivly, and not looked up in
+arguments are interpreted as uid and gids respectively, and not looked up in
 the password or group file.
 All initial supplementary groups are removed.
 .TP
@@ -95,7 +97,7 @@ is prefixed with a colon, the
 .I user
 and
 .I group
-arguments are interpreted as uid and gid respectivly, and not looked up in
+arguments are interpreted as uid and gid respectively, and not looked up in
 the password or group file.
 .TP
 .B \-b \fIargv0
@@ -208,10 +210,20 @@ Limit the core file size to
 .I bytes
 bytes.
 .TP
+.B \-t \fIseconds
+limit CPU time.
+Limit CPU time to
+.I seconds
+seconds, delivering a SIGXCPU thereafter.
+.TP
 .B \-v
 verbose.
 Print verbose messages to standard error.
 This includes warnings about limits unsupported by the system.
+.TP
+.B \-V
+version string.
+Print a version string to standard error.
 .TP
 .B \-P
 pgrphack.
