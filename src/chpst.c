@@ -20,7 +20,7 @@
 #include "openreadclose.h"
 #include "direntry.h"
 
-#define USAGE_MAIN " [-vP012] [-u user[:group]] [-U user[:group]] [-b argv0] [-e dir] [-/ root] [-n nice] [-l|-L lock] [-m n] [-d n] [-o n] [-p n] [-f n] [-c n] prog"
+#define USAGE_MAIN " [-vVP012] [-u user[:group]] [-U user[:group]] [-b argv0] [-e dir] [-/ root] [-n nice] [-l|-L lock] [-m n] [-d n] [-o n] [-p n] [-f n] [-c n] [-t n] prog"
 #define FATAL "chpst: fatal: "
 #define WARNING "chpst: warning: "
 

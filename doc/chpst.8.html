@@ -11,9 +11,9 @@
 <h2><a name='sect0'>Name</a></h2>
 chpst - runs a program with a changed process state 
 <h2><a name='sect1'>Synopsis</a></h2>
-<b>chpst</b> [-vP012]
+<b>chpst</b> [-vVP012]
 [-u <i>user</i>] [-U <i>user</i>] [-b <i>argv0</i>] [-e <i>dir</i>] [-/ <i>root</i>] [-n <i>inc</i>] [-l|-L <i>lock</i>] [-m <i>bytes</i>] [-d <i>bytes</i>]
-[-o <i>n</i>] [-p <i>n</i>] [-f <i>bytes</i>] [-c <i>bytes</i>] <i>prog</i> 
+[-o <i>n</i>] [-p <i>n</i>] [-f <i>bytes</i>] [-c <i>bytes</i>] [-t <i>seconds</i>] <i>prog</i>
 <h2><a name='sect2'>Description</a></h2>
 <i>prog</i> consists of one or
 more arguments. <p>
@@ -30,7 +30,7 @@ and a <i>group</i>, set the gid to <i>group</i>&rsquo;s gid, as found in <i>/etc
 of <i>user</i>&rsquo;s gid. If <i>group</i> consists of a colon-separated list of group names,
 <b>chpst</b> sets the group ids of all listed groups. If <i>user</i> is prefixed with
 a colon, the <i>user</i> and all <i>group</i> arguments are interpreted as uid and gids
-respectivly, and not looked up in the password or group file. All initial
+respectively, and not looked up in the password or group file. All initial
 supplementary groups are removed. </dd>
 
 <dt><b>-U <i>[:]user[:group]</b> </i></dt>
@@ -38,7 +38,7 @@ supplementary groups are removed. </dd>
 variables $UID and $GID to the <i>user</i>&rsquo;s uid and gid, as found in <i>/etc/passwd</i>.
 If <i>user</i> is followed by a colon and a <i>group</i>, set $GID to the <i>group</i>&rsquo;s gid,
 as found in <i>/etc/group</i>, instead of <i>user</i>&rsquo;s gid. If <i>user</i> is prefixed with a
-colon, the <i>user</i> and <i>group</i> arguments are interpreted as uid and gid respectivly,
+colon, the <i>user</i> and <i>group</i> arguments are interpreted as uid and gid respectively,
 and not looked up in the password or group file. </dd>
 
 <dt><b>-b <i>argv0</b> </i></dt>
@@ -98,9 +98,15 @@ the output file size to <i>bytes</i> bytes. </dd>
 <dd>limit core size. Limit the core
 file size to <i>bytes</i> bytes. </dd>
 
+<dt><b>-t <i>seconds</b> </i></dt>
+<dd>limit CPU time. Limit CPU time to <i>seconds</i> seconds, delivering a SIGXCPU thereafter.</dd>
+
 <dt><b>-v</b> </dt>
 <dd>verbose. Print verbose messages to standard error.
 This includes warnings about limits unsupported by the system. </dd>
+
+<dt><b>-V</b> </dt>
+<dd>version string. Print a version string to standard error. </dd>
 
 <dt><b>-P</b> </dt>
 <dd>pgrphack.
