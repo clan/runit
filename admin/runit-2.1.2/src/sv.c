@@ -56,7 +56,14 @@ void usage() {
   if (!lsb) strerr_die4x(100, "usage: ", progname, USAGE, "\n");
   strerr_die4x(2, "usage: ", progname, USAGELSB, "\n");
 }
-void done(unsigned int e) { if (curdir != -1) fchdir(curdir); _exit(e); }
+void done(unsigned int e) {
+  if (curdir != -1) {
+    if (fchdir(curdir) < 0) {
+     // TODO
+    }
+  }
+  _exit(e);
+}
 void fatal(char *m1) {
   strerr_warn3(FATAL, m1, ": ", &strerr_sys);
   done(lsb ? 151 : 100);
