@@ -28,7 +28,7 @@ unsigned int fmt_ptime_iso8601(char *s, struct taia *ta) {
 }
 
 unsigned int fmt_taia(char *s, struct taia *t) {
-  static char hex[16] ="0123456789abcdef";
+  static char hex[17] ="0123456789abcdef";
   static char pack[TAIA_PACK];
   int i;
 
