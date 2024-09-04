@@ -1,0 +1,13 @@
+This is an effort to keep runit still available in official gentoo portage.
+
+Initialized from source downloaded from https://smarden.org/runit/runit-2.1.2.tar.gz
+
+The official source tree is at: http://smarden.org/git/runit.git/, which is branch
+official (https://github.com/clan/runit/tree/official) in this repository.
+
+Official home page is at: https://smarden.org/runit/
+
+Patches maintained by other Linux Distributions:
+
+debian	https://salsa.debian.org/debian/runit.git/
+void-linux	https://github.com/void-linux/runit.git
