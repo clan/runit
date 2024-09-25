@@ -1,3 +1,7 @@
+  * prot.c, prot.h, chkshsgr.c, tryshsgr.c: remove; obsolete.
+  * Makefile, TARGETS: no longer check for "shortsetgroups" (thx Leah
+    Neukirchen).
+  * chpst.c: replace prot_uid() with setuid().
   * utmpset.c: don't pass int32_t to time() (thx Lorenzo Beretta).
   * chpst.c, pathexec.h, pathexec_env.c, pathexec_run.c, runsvdir.c,
     sgetopt.c, sgetopt.h, subgetopt.c, subgetopt.h, sv.c, svlogd.c,
