@@ -1,3 +1,5 @@
+  * sv.c: add sleep_microseconds to encapsulate (u|nano)sleep (thx Z.
+    Liu).
   * chpst.c, chpst.dist, man/chpst.8: add options -t and -V to chpst man
     page and usage (thx Lorenzo Puliti, Z. Liu).
   * man/runsv.8: log service's ./finish script is actually not invoked
