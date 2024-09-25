@@ -1,3 +1,4 @@
+  * doc/install.html: add link to sha256sum.
   * doc/install.html, doc/replaceinit.html: change mail address.
   * package/TODO: remove.
   * package/README,COPYING: Copyright date.
