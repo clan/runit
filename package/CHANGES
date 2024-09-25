@@ -1,3 +1,6 @@
+  * x86cpuid.c: fix error: call to undeclared library function '...'; ISO
+    C99 and later do not support implicit function declarations
+    [-Wimplicit-function-declaration] (thx Z. Liu, Debian, and others).
   * chpst.c, pathexec_run.c, prot.c, seek_set.c: fix error: call to
     undeclared function '...'; ISO C99 and later do not support implicit
     function declarations [-Wimplicit-function-declaration] (thx Z. Liu).
