@@ -1,3 +1,11 @@
+  * tryflock.c, trysgact.c, trysgprm.c, trywaitp.c: fix error: type
+    specifier missing, defaults to 'int'; ISO C99 and later do not support
+    implicit int [-Wimplicit-int] (thx Z. Liu and others).
+  * chkshsgr.c, trycpp.c, trypoll.c, tryshsgr.c, tryulong64.c: fix error:
+    call to undeclared function '...'; ISO C99 and later do not support
+    implicit function declarations [-Wimplicit-function-declaration] (thx
+    Z. Liu and others).
+
 2.1.2
 Sun, 10 Aug 2014 18:01:54 +0000
   * doc/index.html: reorder, cleanup links to distributions; add Linux
