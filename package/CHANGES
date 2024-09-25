@@ -1,3 +1,9 @@
+  * chpst.c, chpst.dist, man/chpst.8: add options -t and -V to chpst man
+    page and usage (thx Lorenzo Puliti, Z. Liu).
+  * man/runsv.8: log service's ./finish script is actually not invoked
+    (thx Jamie Heilman, Dmitry Bogatov, Z. Liu).
+  * man/runsv.8: clarify how signal override works with control/d and x
+    (thx Andras Korn, Lorenzo Puliti, Z. Liu).
   * runit.c, runit.h, man/runit.8: support /etc/runit/nosync file to make
     sync on shutdown/reboot optional (thx Andras Korn).
   * prot.c, prot.h, chkshsgr.c, tryshsgr.c: remove; obsolete.
