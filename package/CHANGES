@@ -1,3 +1,7 @@
+  * chpst.c, pathexec.h, pathexec_env.c, pathexec_run.c, runsvdir.c,
+    sgetopt.c, sgetopt.h, subgetopt.c, subgetopt.h, sv.c, svlogd.c,
+    utmpset.c: fix compilation warning(s): -Wincompatible-pointer-types-
+    discards-qualifiers (thx Z. Liu, Debian, and others).
   * x86cpuid.c: fix error: call to undeclared library function '...'; ISO
     C99 and later do not support implicit function declarations
     [-Wimplicit-function-declaration] (thx Z. Liu, Debian, and others).
