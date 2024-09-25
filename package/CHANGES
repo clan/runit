@@ -1,3 +1,5 @@
+  * runit.c, runit.h, man/runit.8: support /etc/runit/nosync file to make
+    sync on shutdown/reboot optional (thx Andras Korn).
   * prot.c, prot.h, chkshsgr.c, tryshsgr.c: remove; obsolete.
   * Makefile, TARGETS: no longer check for "shortsetgroups" (thx Leah
     Neukirchen).
