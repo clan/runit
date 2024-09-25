@@ -1,3 +1,4 @@
+  * package/README,COPYING: Copyright date.
   * chpst.c: fix compilation warning(s): -Wunsequenced (thx Dmitry
     Bogatov, Z. Liu).
   * svlogd.c: Initialize all fields of sockaddr_in (thx Érico Rolim).
