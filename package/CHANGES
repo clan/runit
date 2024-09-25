@@ -1,3 +1,4 @@
+  * doc/install.html, doc/replaceinit.html: change mail address.
   * package/TODO: remove.
   * package/README,COPYING: Copyright date.
   * chpst.c: fix compilation warning(s): -Wunsequenced (thx Dmitry
