@@ -12,7 +12,7 @@
 chpst - runs a program with a changed process state 
 <h2><a name='sect1'>Synopsis</a></h2>
 <b>chpst</b> [-vVP012]
-[-u <i>user</i>] [-U <i>user</i>] [-b <i>argv0</i>] [-e <i>dir</i>] [-/ <i>root</i>] [-n <i>inc</i>] [-l|-L <i>lock</i>] [-m <i>bytes</i>] [-d <i>bytes</i>]
+[-u <i>user</i>] [-U <i>user</i>] [-b <i>argv0</i>] [-e <i>dir</i>] [-/ <i>root</i>] [-C <i>pwd</i>] [-n <i>inc</i>] [-l|-L <i>lock</i>] [-m <i>bytes</i>] [-d <i>bytes</i>]
 [-o <i>n</i>] [-p <i>n</i>] [-f <i>bytes</i>] [-c <i>bytes</i>] [-t <i>seconds</i>] <i>prog</i>
 <h2><a name='sect2'>Description</a></h2>
 <i>prog</i> consists of one or
@@ -58,6 +58,11 @@ without adding a new variable. </dd>
 <dt><b>-/ <i>root</b> </i></dt>
 <dd>chroot. Change the root directory to
 <i>root</i> before starting <i>prog</i>. </dd>
+
+<dt><b>-C <i>pwd</b> </i></dt>
+<dd>chdir. Change the working directory to
+<i>pwd</i> before starting <i>prog</i>.
+When combined with -/, the working directory is changed after the chroot. </dd>
 
 <dt><b>-n <i>inc</b> </i></dt>
 <dd>nice. Add <i>inc</i> to the <i><b>nice</b>(2)</i> value before
