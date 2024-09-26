@@ -1,3 +1,4 @@
+  * chpst.dist, sv.dist, svlogd.dist, utmpset.dist: adapt.
   * chpst.c, man/chpst.8: add -C option to change working directory (thx
     Andrew J. Hesford, void linux).
   * doc/install.html: add link to sha256sum.
