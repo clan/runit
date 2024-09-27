@@ -1,3 +1,5 @@
+2.2.0
+Fri, 27 Sep 2024 00:38:25 +0000
   * chpst.dist, sv.dist, svlogd.dist, utmpset.dist: adapt.
   * chpst.c, man/chpst.8: add -C option to change working directory (thx
     Andrew J. Hesford, void linux).
