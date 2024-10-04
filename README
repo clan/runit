@@ -1,3 +1,8 @@
+## Edit: As of 9/28/2024 
+all patches have been incorporated to the new source archived at https://smarden.org/runit/runit-2.2.0.tar.gz
+
+____________________
+
 This is an effort to keep runit still available in official gentoo portage.
 
 Initialized from source downloaded from https://smarden.org/runit/runit-2.1.2.tar.gz
