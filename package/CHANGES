@@ -1,3 +1,5 @@
+  * doc/index.html: fix link to Void Linux (thx R.G.).
+
 2.2.0
 Fri, 27 Sep 2024 00:38:25 +0000
   * chpst.dist, sv.dist, svlogd.dist, utmpset.dist: adapt.
