@@ -31,20 +31,23 @@ int selfpipe[2];
 int sigc =0;
 int sigi =0;
 
-void sig_cont_handler (void) {
+void sig_cont_handler (int signum) {
+  (void)signum;
   sigc++;
   if (write(selfpipe[1], "", 1) < 0) {
     // TODO
   }
 }
-void sig_int_handler (void) {
+void sig_int_handler (int signum) {
+  (void)signum;
   sigi++;
   if (write(selfpipe[1], "", 1) < 0) {
     // TODO
   }
 }
-void sig_child_handler (void)
+void sig_child_handler (int signum)
 {
+  (void)signum;
   if (write(selfpipe[1], "", 1) < 0) {
     // TODO
   }

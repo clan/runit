@@ -83,12 +83,14 @@ void warnx(char *m1, char *m2, char *m3) {
 
 void stopservice(struct svdir *);
 
-void s_child() {
+void s_child(int signum) {
+  (void)signum;
   if (write(selfpipe[1], "", 1) < 0) {
     // TODO
   }
 }
-void s_term() {
+void s_term(int signum) {
+  (void)signum;
   sigterm =1;
   if (write(selfpipe[1], "", 1) < 0) {
     // TODO
