@@ -5,12 +5,12 @@
 #include "byte.h"
 #include "error.h"
 
-static int allwrite(int (*op)(int, const char *, unsigned int),int fd,const char *buf,unsigned int len)
+static int allwrite(int (*op)(int, char *, unsigned int),int fd,const char *buf,unsigned int len)
 {
   int w;
 
   while (len) {
-    w = op(fd,buf,len);
+    w = op(fd,(char *)buf,len);
     if (w == -1) {
       if (errno == error_intr) continue;
       return -1; /* note that some data may have been written */
@@ -82,7 +82,7 @@ int buffer_putsalign(buffer *s,const char *buf)
 
 int buffer_puts(buffer *s,const char *buf)
 {
-  return buffer_put(s,buf,str_len(buf));
+  return buffer_put(s,(char *)buf,str_len(buf));
 }
 
 int buffer_putsflush(buffer *s,const char *buf)
