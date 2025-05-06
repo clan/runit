@@ -5,7 +5,7 @@
 #include "byte.h"
 #include "error.h"
 
-static int allwrite(int (*op)(int, const char *, unsigned int),int fd,const char *buf,unsigned int len)
+static int allwrite(int (*op)(int, char *, unsigned int),int fd,const char *buf,unsigned int len)
 {
   int w;
 
@@ -47,7 +47,7 @@ int buffer_putalign(buffer *s,const char *buf,unsigned int len)
   return 0;
 }
 
-int buffer_put(buffer *s,const char *buf,unsigned int len)
+int buffer_put(buffer *s,char *buf,unsigned int len)
 {
   unsigned int n;
  
