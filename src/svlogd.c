@@ -628,11 +628,11 @@ int buffer_pread(int fd, char *s, unsigned int len) {
   if (i > 0) linecomplete =(s[i -1] == '\n');
   return(i);
 }
-void sig_term_handler(void) {
+void sig_term_handler(int) {
   if (verbose) strerr_warn2(INFO, "sigterm received.", 0);
   exitasap =1;
 }
-void sig_child_handler(void) {
+void sig_child_handler(int) {
   int pid, l;
 
   if (verbose) strerr_warn2(INFO, "sigchild received.", 0);
@@ -644,11 +644,11 @@ void sig_child_handler(void) {
         break;
       }
 }
-void sig_alarm_handler(void) {
+void sig_alarm_handler(int) {
   if (verbose) strerr_warn2(INFO, "sigalarm received.", 0);
   rotateasap =1;
 }
-void sig_hangup_handler(void) {
+void sig_hangup_handler(int) {
   if (verbose) strerr_warn2(INFO, "sighangup received.", 0);
   reopenasap =1;
 }
