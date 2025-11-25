@@ -33,13 +33,13 @@ int sigi =0;
 
 void sig_cont_handler (int unused) {
   sigc++;
-  write(selfpipe[1], "", 1);
+  if (write(selfpipe[1], "", 1) < 0) {}
 }
 void sig_int_handler (int unused) {
   sigi++;
-  write(selfpipe[1], "", 1);
+  if (write(selfpipe[1], "", 1) < 0) {}
 }
-void sig_child_handler (int unused) { write(selfpipe[1], "", 1); }
+void sig_child_handler (int unused) { if(write(selfpipe[1], "", 1) < 0) {} }
 
 void sync_if_needed() {
   struct stat s;
@@ -206,7 +206,7 @@ int main (int argc, const char * const *argv, char * const *envp) {
       }
       if (child != 0) {
         /* collect terminated children */
-        write(selfpipe[1], "", 1);
+        if (write(selfpipe[1], "", 1) < 0) {}
         continue;
       }
 

@@ -83,10 +83,10 @@ void warnx(char *m1, char *m2, char *m3) {
 
 void stopservice(struct svdir *);
 
-void s_child(int unused) { write(selfpipe[1], "", 1); }
+void s_child(int unused) { if (write(selfpipe[1], "", 1) < 0) {} }
 void s_term(int unused) {
   sigterm =1;
-  write(selfpipe[1], "", 1); /* XXX */
+  if (write(selfpipe[1], "", 1) < 0) {} /* XXX */
 }
 
 void update_status(struct svdir *s) {

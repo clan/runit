@@ -82,7 +82,7 @@ int wtmp_logout(const char *line) {
   ut.ut_type =DEAD_PROCESS;
 #endif
   if (write(fd, &ut, sizeof(uw_tmp)) != sizeof(uw_tmp)) {
-    ftruncate(fd, st.st_size);
+    if (ftruncate(fd, st.st_size) < 0) {}
     close(fd);
     return(-1);
   }
