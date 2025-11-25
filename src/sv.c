@@ -304,7 +304,8 @@ int main(int argc, char **argv) {
     }
   }
   argv +=optind; argc -=optind;
-  if (!(action =*argv++)) usage(); --argc;
+  if (!(action =*argv++)) usage();
+  --argc;
   if (!lsb) { service =argv; services =argc; }
   if (!*service) usage();
 
