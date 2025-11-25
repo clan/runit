@@ -2,7 +2,7 @@
 
 #include "byte.h"
 
-void byte_copy(register char *to,register unsigned int n,register char *from)
+void byte_copy(register char *to,register unsigned int n,register const char *from)
 {
   for (;;) {
 #pragma GCC diagnostic push

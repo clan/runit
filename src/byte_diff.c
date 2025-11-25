@@ -2,7 +2,7 @@
 
 #include "byte.h"
 
-int byte_diff(register char *s,register unsigned int n,register char *t)
+int byte_diff(register const char *s,register unsigned int n,register const char *t)
 {
   for (;;) {
 #pragma GCC diagnostic push
