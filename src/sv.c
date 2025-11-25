@@ -218,8 +218,9 @@ int check(char *a) {
   if ((r =svstatus_get()) == -1) return(-1);
   while (*a) {
     if (r == 0) { if (*a == 'x') return(1); return(-1); }
-    if ((c =*a) == 'C')
+    if ((c =*a) == 'C') {
       if (svstatus[17] == 'd') c ='d'; else c ='u';
+    }
     pid =(unsigned char)svstatus[15];
     pid <<=8; pid +=(unsigned char)svstatus[14];
     pid <<=8; pid +=(unsigned char)svstatus[13];
